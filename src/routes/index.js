@@ -43,6 +43,12 @@ export default [
       {
         path: "/rank",
         component: Rank,
+        routes: [
+          {
+            path: "/rank/:id",
+            component: Album,
+          },
+        ],
       },
     ],
   },
