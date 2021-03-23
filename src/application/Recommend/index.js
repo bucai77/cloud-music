@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import * as actionTypes from "./store/actionCreators";
 import { forceCheck } from "react-lazyload";
 import Loading from "../../baseUI/loading/index";
+import { renderRoutes } from "react-router-config";
 
 function Recommend(props) {
   const bannerList = useSelector((state) => {
@@ -38,6 +39,7 @@ function Recommend(props) {
         </div>
       </Scroll>
       {enterLoading ? <Loading></Loading> : null}
+      {renderRoutes(props.route.routes)}
     </Content>
   );
 }
