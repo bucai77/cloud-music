@@ -14,6 +14,7 @@ import Recommend from "../application/Recommend";
 import Singers from "../application/Singers";
 import Rank from "../application/Rank";
 import Album from "../application/Album";
+import Singer from "../application/Singer";
 
 // eslint-disable-next-line
 export default [
@@ -39,6 +40,12 @@ export default [
       {
         path: "/singers",
         component: Singers,
+        routes: [
+          {
+            path: "/singers/:id",
+            component: Singer,
+          },
+        ],
       },
       {
         path: "/rank",
