@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-28 14:26:49
- * @LastEditTime: 2021-03-28 15:13:07
+ * @LastEditTime: 2021-03-28 15:43:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \cloud-music\src\application\Player\normalPlayer\index.js
@@ -15,15 +15,16 @@ import {
   Bottom,
   Operators,
   CDWrapper,
+  ProgressWrapper
 } from "./style";
 import { CSSTransition } from "react-transition-group";
 import animations from "create-keyframe-animation";
 import { prefixStyle } from "../../../api/utils";
+import ProgressBar from '../../../baseUI/progressBar';
 
 function NormalPlayer(props) {
   const { song, fullScreen } = props;
   const { toggleFullScreen } = props;
-  console.log(`toggleFullScreen`, toggleFullScreen)
   const normalPlayerRef = useRef();
   const cdWrapperRef = useRef();
   const transform = prefixStyle("transform");
@@ -138,6 +139,13 @@ function NormalPlayer(props) {
           </CDWrapper>
         </Middle>
         <Bottom className="bottom">
+          <ProgressWrapper>
+            <span className="time time-l">0:00</span>
+            <div className="progress-bar-wrapper">
+              <ProgressBar percent={0.2} percentChange={() => { }}></ProgressBar>
+            </div>
+            <div className="time time-r">4:17</div>
+          </ProgressWrapper>
           <Operators>
             <div className="icon i-left" >
               <i className="iconfont">&#xe625;</i>

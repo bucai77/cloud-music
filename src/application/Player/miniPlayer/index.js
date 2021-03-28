@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-28 14:20:55
- * @LastEditTime: 2021-03-28 14:39:22
+ * @LastEditTime: 2021-03-28 15:27:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \cloud-music\src\application\Player\miniPlayer\index.js
@@ -10,12 +10,16 @@ import React, { useRef } from 'react';
 import { getName } from '../../../api/utils';
 import { MiniPlayerContainer } from './style';
 import { CSSTransition } from "react-transition-group";
+import ProgressCircle from '../../../baseUI/progress-circle';
+
 
 function MiniPlayer(props) {
   const { song, fullScreen } = props;
   const { toggleFullScreen } = props;
   const miniPlayerRef = useRef();
-  
+  // 先 mock 一份 percent 数据
+  let percent = 0.2;
+
   return (
     <CSSTransition
       in={!fullScreen}
@@ -39,7 +43,10 @@ function MiniPlayer(props) {
           <p className="desc">{getName(song.ar)}</p>
         </div>
         <div className="control">
-          <i className="iconfont">&#xe650;</i>
+          {/* <i className="iconfont">&#xe650;</i> */}
+          <ProgressCircle radius={32} percent={percent}>
+            <i className="icon-mini iconfont icon-pause">&#xe650;</i>
+          </ProgressCircle>
         </div>
         <div className="control">
           <i className="iconfont">&#xe640;</i>

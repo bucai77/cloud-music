@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-03-18 20:30:09
- * @LastEditTime: 2021-03-18 20:59:26
+ * @LastEditTime: 2021-03-28 15:28:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \cloud-music\src\assets\global-style.js
@@ -13,7 +13,10 @@ const extendClick = () => {
       &:before {
         content: '';
         position: absolute;
-        top: -10px; bottom: -10px; left: -10px; right: -10px;
+        top: -10px; 
+        bottom: -10px; 
+        left: -10px; 
+        right: -10px;
       };
     `;
 };
@@ -29,7 +32,7 @@ const noWrap = () => {
 // eslint-disable-next-line
 export default {
   "theme-color": "#d44439",
-  "theme-color-shadow": "rgba (212, 68, 57, .5)",
+  "theme-color-shadow": "rgba(212, 68, 57, .5)",
   "font-color-light": "#f1f1f1",
   "font-color-desc": "#2E3030",
   "font-color-desc-v2": "#bba8a8", // 略淡
@@ -40,7 +43,7 @@ export default {
   "font-size-ll": "18px",
   "border-color": "#e4e4e4",
   "background-color": "#f2f3f4",
-  "background-color-shadow": "rgba (0, 0, 0, 0.3)",
+  "background-color-shadow": "rgba(0, 0, 0, 0.3)",
   "highlight-background-color": "#fff",
   extendClick,
   noWrap,
